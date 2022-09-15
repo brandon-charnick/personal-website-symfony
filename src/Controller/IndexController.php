@@ -15,8 +15,8 @@ class IndexController extends AbstractController
 		$max = 100000;
         $number = random_int(0, $max);
 
-        return new Response(
-            '<html><body> number: '.$number.'</body></html>'
-        );
+        return $this->render(
+			'/base.html.twig'
+		);
     }
 }
