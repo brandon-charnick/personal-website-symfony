@@ -149,3 +149,17 @@ WORKDIR /srv/app
 COPY --from=app_caddy_builder /usr/bin/caddy /usr/bin/caddy
 COPY --from=app_php /srv/app/public public/
 COPY docker/caddy/Caddyfile /etc/caddy/Caddyfile
+
+# symfony webpack encore
+FROM node:18-alpine as node
+LABEL maintainer="brandoncharnick@gmail.com" 
+ 
+WORKDIR /srv/app
+
+COPY package*.json ./
+
+COPY . .
+
+COPY /docker/node/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]

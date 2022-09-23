@@ -53,6 +53,14 @@ services:
         published: ${HTTP3_PORT:-443}
         protocol: udp
 
+  node:
+    build:
+      context: .
+      target: node
+    container_name: node
+    volumes:
+      - ./:/srv/app:rw
+
 # Mercure is installed as a Caddy module, prevent the Flex recipe from installing another service
 ###> symfony/mercure-bundle ###
 ###< symfony/mercure-bundle ###
