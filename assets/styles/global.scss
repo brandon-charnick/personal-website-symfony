@@ -24,7 +24,7 @@ $light-mode: blanchedalmond;
     text-decoration: overline;
 }
 
-.timeline {
+.timeline-container {
     * {
         margin: 0;
         padding: 0;
@@ -39,9 +39,7 @@ $light-mode: blanchedalmond;
         padding: 100px 0;
     }
     .timeline {
-        width: 80%;
         height: auto;
-        max-width: 800px;
         margin: 0 auto;
         position: relative;
     }
@@ -81,7 +79,6 @@ $light-mode: blanchedalmond;
             content: "";
             position: absolute;
             top: 0;
-            left: 50%;
             transform: translateX(-50%);
             width: 2px;
             height: 100%;
@@ -95,11 +92,10 @@ $light-mode: blanchedalmond;
         .timeline ul li:nth-child(odd) {
             float: left;
             clear: right;
-            transform: translateX(-30px);
+            transform: translateX(30px);
             border-radius: 20px 0px 20px 20px;
         }
         .timeline ul li:nth-child(even) {
-            float: right;
             clear: left;
             transform: translateX(30px);
             border-radius: 0px 20px 20px 20px;
@@ -115,11 +111,9 @@ $light-mode: blanchedalmond;
         }
         .timeline ul li:nth-child(odd)::before {
             transform: translate(50%, -50%);
-            right: -30px;
         }
         .timeline ul li:nth-child(even)::before {
             transform: translate(-50%, -50%);
-            left: -30px;
         }
         .timeline-content .date {
             position: absolute;
