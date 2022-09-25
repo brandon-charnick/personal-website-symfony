@@ -1,19 +1,74 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-	<div class="container my-5">
-		<div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
-			<div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-				<h1 class="display-4 fw-bold lh-1">Border hero with cropped image and shadows</h1>
-				<p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
-				<div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
-					<button type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Primary</button>
-					<button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
-				</div>
-			</div>
-			<div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
-				<img class="rounded-lg-3" src="{{ absolute_url(asset('favicon.ico')) }}" alt="" width="720">
+	<div class="container-md bg-light mt-5">
+		<div class="mt-5 col-lg-12">&nbsp;</div>
+		<div class="row">
+			<div class="col">
+				<h1>Brandon Charnick</h1>
 			</div>
 		</div>
+		<div class="row mt-5">
+			<div class="col">
+				<h5>PHP web developer. Based in Phoenix, AZ.</h5>
+			</div>
+		</div>
+		<div class="row mt-3">
+			<div class="col">
+				<a class="btn btn-primary" target="_blank" href="https://github.com/brandon-charnick">GitHub</a>
+				<a class="btn btn-primary" target="_blank" href="https://www.linkedin.com/in/brandon-charnick/">LinkedIn</a>
+			</div>
+		</div>
+
+		<div class="mt-4 col-lg-12">&nbsp;</div>
+
+		<div class="row mt-5">
+			<h2 class="mt-5">Experience</h2>
+		</div>
+		<div class="row mt-3">
+			{# <div class="col-lg-6">
+				<h5>ER2 | Mesa, AZ <i class="fa-solid fa-map-pin"></i></h5>
+			</div>
+			<div class="col-lg-6">
+			</div> #}
+
+			<div class="timeline">
+				<div class="container">
+					<div class="timeline">
+						<ul>
+							<li>
+								<div class="timeline-content">
+									<h3 class="date">20th may, 2010</h3>
+									<h1>Heading 1</h1>
+									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur tempora ab laudantium voluptatibus aut eos placeat laborum, quibusdam exercitationem labore.</p>
+								</div>
+							</li>
+							<li>
+								<div class="timeline-content">
+									<h3 class="date">20th may, 2010</h3>
+									<h1>Heading 2</h1>
+									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur tempora ab laudantium voluptatibus aut eos placeat laborum, quibusdam exercitationem labore.</p>
+								</div>
+							</li>
+							<li>
+								<div class="timeline-content">
+									<h3 class="date">20th may, 2010</h3>
+									<h1>Heading 3</h1>
+									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur tempora ab laudantium voluptatibus aut eos placeat laborum, quibusdam exercitationem labore.</p>
+								</div>
+							</li>
+							<li>
+								<div class="timeline-content">
+									<h3 class="date">20th may, 2010</h3>
+									<h1>Heading 4</h1>
+									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur tempora ab laudantium voluptatibus aut eos placeat laborum, quibusdam exercitationem labore.</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
 	</div>
 {% endblock %}
