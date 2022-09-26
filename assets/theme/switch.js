@@ -78,12 +78,14 @@
 
   function setup() {
     var settings = localStorage.getItem("light_switch");
-    if (settings == null) {
-      settings = getSystemDefaultTheme();
-    }
 
-    if (settings == "dark") {
-      light_switch.checked = true;
+	if (settings === null) {
+		light_switch.checked = true;
+	  	localStorage.setItem("light_switch", "dark");
+    }
+    if (settings === "dark") {
+		light_switch.checked = true;
+	  	localStorage.setItem("light_switch", "dark");
     }
 
     light_switch.addEventListener("change", onToggleMode);

@@ -31,30 +31,28 @@ $light-mode: blanchedalmond;
         box-sizing: border-box;
     }
     .container {
-        min-height: 100vh;
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 100px 0;
+        padding: 75px 0;
     }
     .timeline {
         height: auto;
         margin: 0 auto;
         position: relative;
     }
-
-    .timeline ul {
+    .timeline .list {
         list-style: none;
     }
-    .timeline ul li {
+    .timeline .list .list-item {
         padding: 20px;
-        background-color: #1e1f22;
-        color: white;
+        // background-color: #1e1f22;
+        // color: white;
         border-radius: 10px;
         margin-bottom: 20px;
     }
-    .timeline ul li:last-child {
+    .timeline .list .list-item:last-child {
         margin-bottom: 0;
     }
     .timeline-content h1 {
@@ -84,23 +82,22 @@ $light-mode: blanchedalmond;
             height: 100%;
             background-color: gray;
         }
-        .timeline ul li {
-            width: 50%;
+        .timeline .list .list-item {
             position: relative;
             margin-bottom: 50px;
         }
-        .timeline ul li:nth-child(odd) {
+        .timeline .list .list-item:nth-child(odd) {
             float: left;
             clear: right;
             transform: translateX(30px);
             border-radius: 20px 0px 20px 20px;
         }
-        .timeline ul li:nth-child(even) {
+        .timeline .list .list-item:nth-child(even) {
             clear: left;
             transform: translateX(30px);
             border-radius: 0px 20px 20px 20px;
         }
-        .timeline ul li::before {
+        .timeline .list .list-item::before {
             content: "";
             position: absolute;
             height: 20px;
@@ -109,17 +106,19 @@ $light-mode: blanchedalmond;
             background-color: gray;
             top: 0px;
         }
-        .timeline ul li:nth-child(odd)::before {
-            transform: translate(50%, -50%);
+        .timeline .list .list-item:nth-child(odd)::before {
+			left: -30px;
+            transform: translate(-50%, -50%);
         }
-        .timeline ul li:nth-child(even)::before {
+        .timeline .list .list-item:nth-child(even)::before {
+			left: -30px;
             transform: translate(-50%, -50%);
         }
         .timeline-content .date {
             position: absolute;
-            top: -30px;
+            top: -8px;
         }
-        .timeline ul li:hover::before {
+        .timeline .list .list-item:hover::before {
             background-color: $primary;
         }
     }
