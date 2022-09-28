@@ -10,13 +10,10 @@ use Symfony\Component\Routing\Annotation\Route;
 class IndexController extends AbstractController
 {
     #[Route('/', name: 'index')]
-    public function number(): Response
+    public function index(): Response
     {
-		$max = 100000;
-        $number = random_int(0, $max);
-
         return $this->render(
-			'/base.html.twig'
+			'index/index.html.twig'
 		);
     }
 }

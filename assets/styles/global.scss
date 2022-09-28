@@ -1,4 +1,135 @@
-$primary: darken(#428bca, 20%);
+$primary: darken(#428bca, 15%);
+$dark-mode: darkslategray;
+$light-mode: blanchedalmond;
+
+// https://getbootstrap.com/docs/5.2/components/list-group/
+$list-group-color: inherit;
 
 // the ~ allows you to reference things in node_modules
 @import "~bootstrap/scss/bootstrap";
+
+.dropdown-toggle {
+    outline: 0;
+}
+#light-switch {
+    transform: scale(1.8);
+}
+.custom-theme.bg-light {
+    background-color: $dark-mode !important;
+    border-radius: 3px;
+    color: gainsboro;
+    text-decoration: underline;
+}
+.custom-theme.bg-dark {
+    background-color: $light-mode !important;
+    box-shadow: 10px 5px 5px rgba(246, 255, 219, 0.5);
+    color: dimgray;
+    text-decoration: overline;
+}
+
+.timeline-container {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 0;
+    }
+    .timeline {
+        height: auto;
+        margin: 0 auto;
+        position: relative;
+    }
+    .timeline .list {
+        list-style: none;
+    }
+    .timeline .list .list-item {
+        padding: 20px;
+        // background-color: #1e1f22;
+        // color: white;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+    .timeline .list .list-item:last-child {
+        margin-bottom: 0;
+    }
+    .timeline-content h1 {
+        font-weight: 500;
+        font-size: 25px;
+        line-height: 30px;
+        margin-bottom: 10px;
+    }
+    .timeline-content h6 {
+        margin-bottom: 13px;
+    }
+    .timeline-content p {
+        font-size: 16px;
+        line-height: 30px;
+        font-weight: 300;
+        margin-top: 15px;
+    }
+    .timeline-content ul {
+        padding-left: 15px;
+    }
+    .timeline-content .date {
+        font-size: 12px;
+        font-weight: 300;
+        margin-bottom: 10px;
+        letter-spacing: 2px;
+    }
+    @media only screen and (min-width: 768px) {
+        .timeline:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background-color: gray;
+        }
+        .timeline .list .list-item {
+            position: relative;
+            margin-bottom: 50px;
+        }
+        .timeline .list .list-item:nth-child(odd) {
+            float: left;
+            clear: right;
+            transform: translateX(30px);
+            border-radius: 20px 0px 20px 20px;
+        }
+        .timeline .list .list-item:nth-child(even) {
+            clear: left;
+            transform: translateX(30px);
+            border-radius: 0px 20px 20px 20px;
+        }
+        .timeline .list .list-item::before {
+            content: "";
+            position: absolute;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background-color: gray;
+            top: 0px;
+        }
+        .timeline .list .list-item:nth-child(odd)::before {
+            left: -30px;
+            transform: translate(-50%, -50%);
+        }
+        .timeline .list .list-item:nth-child(even)::before {
+            left: -30px;
+            transform: translate(-50%, -50%);
+        }
+        .timeline-content .date {
+            position: absolute;
+            top: -8px;
+        }
+        .timeline .list .list-item:hover::before {
+            background-color: $primary;
+        }
+    }
+}
