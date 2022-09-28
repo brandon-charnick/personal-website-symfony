@@ -1,7 +1,3 @@
-/**
- *  Light Switch @version v0.1.4
- */
-
 (function () {
   let light_switch = document.getElementById("light-switch");
   if (!light_switch) {

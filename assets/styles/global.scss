@@ -1,9 +1,12 @@
-// the ~ allows you to reference things in node_modules
-@import "~bootstrap/scss/bootstrap";
-
 $primary: darken(#428bca, 15%);
 $dark-mode: darkslategray;
 $light-mode: blanchedalmond;
+
+// https://getbootstrap.com/docs/5.2/components/list-group/
+$list-group-color: inherit;
+
+// the ~ allows you to reference things in node_modules
+@import "~bootstrap/scss/bootstrap";
 
 .dropdown-toggle {
     outline: 0;
@@ -61,17 +64,18 @@ $light-mode: blanchedalmond;
         line-height: 30px;
         margin-bottom: 10px;
     }
-	.timeline-content h6 {
-		margin-bottom:10px;
-	}
+    .timeline-content h6 {
+        margin-bottom: 13px;
+    }
     .timeline-content p {
         font-size: 16px;
         line-height: 30px;
         font-weight: 300;
+        margin-top: 15px;
     }
-	.timeline-content ul {
-		padding-left:15px;
-	}
+    .timeline-content ul {
+        padding-left: 15px;
+    }
     .timeline-content .date {
         font-size: 12px;
         font-weight: 300;
@@ -113,11 +117,11 @@ $light-mode: blanchedalmond;
             top: 0px;
         }
         .timeline .list .list-item:nth-child(odd)::before {
-			left: -30px;
+            left: -30px;
             transform: translate(-50%, -50%);
         }
         .timeline .list .list-item:nth-child(even)::before {
-			left: -30px;
+            left: -30px;
             transform: translate(-50%, -50%);
         }
         .timeline-content .date {
