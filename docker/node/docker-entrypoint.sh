@@ -2,8 +2,6 @@
 set -e
 
 npm ci
-if [ "$APP_ENV" != 'prod' ]; then
-	npm run watch
-fi
+npm run build
 
 exec "$@"
