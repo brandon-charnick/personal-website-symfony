@@ -12,7 +12,7 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 
 #[AsCommand(
     name: 'regenerate-app-secret',
-    description: 'Add a short description for your command',
+    description: 'Outputs a new APP_SECRET.',
 )]
 class RegenerateAppSecretCommand extends Command
 {
