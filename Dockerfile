@@ -151,8 +151,10 @@ COPY --from=app_php /srv/app/public public/
 COPY docker/caddy/Caddyfile /etc/caddy/Caddyfile
 
 # Node image
-FROM node:18-alpine as node
+FROM node:18-alpine as app_node
 LABEL maintainer="brandoncharnick@gmail.com" 
+
+ENV APP_ENV=prod
  
 WORKDIR /srv/app
 
@@ -163,3 +165,9 @@ COPY . .
 COPY /docker/node/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
+
+# Node dev image
+FROM app_node as app_node_dev
+LABEL maintainer="brandoncharnick@gmail.com"
+
+ENV APP_ENV=dev

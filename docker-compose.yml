@@ -56,8 +56,7 @@ services:
   node:
     build:
       context: .
-      target: node
-    container_name: node
+      target: app_node
     volumes:
       - ./:/srv/app:rw
 

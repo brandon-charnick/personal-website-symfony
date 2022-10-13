@@ -25,3 +25,7 @@ services:
 
 ###> symfony/mercure-bundle ###
 ###< symfony/mercure-bundle ###
+
+  node:
+    build:
+      target: app_node_dev
