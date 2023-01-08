@@ -24,6 +24,7 @@ WORKDIR /srv/app
 
 # persistent / runtime deps
 RUN apk add --no-cache \
+		linux-headers \
 		acl \
 		fcgi \
 		file \
@@ -152,10 +153,10 @@ COPY docker/caddy/Caddyfile /etc/caddy/Caddyfile
 
 # Node image
 FROM node:18-alpine as app_node
-LABEL maintainer="brandoncharnick@gmail.com" 
+LABEL maintainer="brandoncharnick@gmail.com"
 
 ENV APP_ENV=prod
- 
+
 WORKDIR /srv/app
 
 COPY package*.json ./
