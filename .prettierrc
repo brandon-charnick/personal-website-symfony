@@ -1,0 +1,13 @@
+{
+  "printWidth": 80,
+  "tabWidth": 4,
+  "singleQuote": true,
+  "overrides": [
+    {
+      "files": "*.twig",
+      "options": {
+        "parser": "twig"
+      }
+    }
+  ]
+}

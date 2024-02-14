@@ -11,9 +11,6 @@ $list-group-color: inherit;
 .dropdown-toggle {
     outline: 0;
 }
-#light-switch {
-    transform: scale(1.8);
-}
 .custom-theme.bg-light {
     background-color: $dark-mode !important;
     border-radius: 3px;
@@ -44,8 +41,8 @@ $list-group-color: inherit;
 .expertise-container .col-sm {
     padding: 0;
     display: flex;
-    justify-content: center; /* align horizontal */
-    align-items: center; /* align vertical */
+    justify-content: center;
+    align-items: center;
     min-height: 50px;
 }
 
@@ -67,108 +64,126 @@ $list-group-color: inherit;
 }
 
 .timeline-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
-    .container {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 40px 0;
-    }
     .timeline {
         height: auto;
         margin: 0 auto;
         position: relative;
+
+        .list {
+            list-style: none;
+        }
+
+        .list-item {
+            background-color: #242526;
+            color: #e4e6eb;
+            border: 1px solid #343a40;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                transform: translateY(-5px);
+                background-color: #303030;
+                border-color: #5a5c60;
+                box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
+                border-radius: 20px 20px 20px 0;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .timeline-content {
+            h1 {
+                font-weight: 500;
+                font-size: 25px;
+                margin-bottom: 2px;
+            }
+
+            h6 {
+                margin-bottom: 13px;
+            }
+
+            p {
+                font-size: 16px;
+                line-height: 30px;
+                font-weight: 300;
+                margin-top: 15px;
+            }
+
+            ul {
+                padding-left: 15px;
+            }
+
+            .date {
+                font-size: 14px;
+                font-weight: 425;
+                letter-spacing: 3px;
+                top: -10px;
+            }
+        }
     }
-    .timeline .list {
-        list-style: none;
-    }
-    .timeline .list .list-item {
-        padding: 20px;
-        // background-color: #1e1f22;
-        // color: white;
-        border-radius: 10px;
-        margin-bottom: 20px;
-    }
-    .timeline .list .list-item:last-child {
-        margin-bottom: 0;
-    }
-    .timeline-content h1 {
-        font-weight: 500;
-        font-size: 25px;
-        line-height: 30px;
-        margin-bottom: 10px;
-    }
-    .timeline-content h6 {
-        margin-bottom: 13px;
-    }
-    .timeline-content p {
-        font-size: 16px;
-        line-height: 30px;
-        font-weight: 300;
-        margin-top: 15px;
-    }
-    .timeline-content ul {
-        padding-left: 15px;
-    }
-    .timeline-content .date {
-        font-size: 12px;
-        font-weight: 400;
-        margin-bottom: 10px;
-        letter-spacing: 2px;
-    }
+
     @media only screen and (min-width: 768px) {
-        .timeline:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            transform: translateX(-50%);
-            width: 2px;
-            height: 100%;
-            background-color: gray;
-        }
-        .timeline .list .list-item {
-            position: relative;
-            margin-bottom: 50px;
-        }
-        .timeline .list .list-item:nth-child(odd) {
-            float: left;
-            clear: right;
-            transform: translateX(30px);
-            border-radius: 20px 0px 20px 20px;
-        }
-        .timeline .list .list-item:nth-child(even) {
-            clear: left;
-            transform: translateX(30px);
-            border-radius: 0px 20px 20px 20px;
-        }
-        .timeline .list .list-item::before {
-            content: "";
-            position: absolute;
-            height: 20px;
-            width: 20px;
-            border-radius: 50%;
-            background-color: gray;
-            top: 0px;
-        }
-        .timeline .list .list-item:nth-child(odd)::before {
-            left: -30px;
-            transform: translate(-50%, -50%);
-        }
-        .timeline .list .list-item:nth-child(even)::before {
-            left: -30px;
-            transform: translate(-50%, -50%);
-        }
-        .timeline-content .date {
-            position: absolute;
-            top: -8px;
-        }
-        .timeline .list .list-item:hover::before {
-            background-color: $primary;
+        .timeline {
+            &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                transform: translateX(-50%);
+                width: 2px;
+                height: 100%;
+                background-color: gray;
+            }
+            .list-item {
+                position: relative;
+                margin-bottom: 50px;
+                padding: 20px;
+            }
+            .list-item:nth-child(odd) {
+                float: left;
+                clear: right;
+                transform: translateX(30px);
+            }
+            .list-item:nth-child(even) {
+                clear: left;
+                transform: translateX(30px);
+                border-radius: 0px 20px 20px 20px;
+            }
+            .list-item::before {
+                content: "";
+                position: absolute;
+                height: 20px;
+                width: 20px;
+                border-radius: 50%;
+                background-color: gray;
+                top: 0px;
+            }
+            .list-item:nth-child(odd)::before {
+                left: -30px;
+                transform: translate(-50%, -50%);
+            }
+            .list-item:nth-child(even)::before {
+                left: -30px;
+                transform: translate(-50%, -50%);
+            }
+            .list-item:hover::before {
+                background-color: $primary;
+            }
         }
     }
 }
