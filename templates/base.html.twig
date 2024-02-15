@@ -1,79 +1,72 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>
-			{% block title %}Brandon Charnick
-			{% endblock %}
-		</title>
-		<link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
-		<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 
-		<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"/>
-		<link
-		href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet"/>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        {% block title %}
+        Brandon Charnick
+        {% endblock %}
+    </title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 
-		{% block stylesheets %}
-			{{ encore_entry_link_tags('app') }}
-		{% endblock %}
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet" />
 
-		{% block javascripts %}
-			{{ encore_entry_script_tags('app') }}
-		{% endblock %}
-	</head>
+    {% block stylesheets %}
+    {{ encore_entry_link_tags('app') }}
+    {% endblock %}
 
-	<div class="container-lg px-0">
-		<nav class="navbar navbar-expand-sm">
-			<div class="container-fluid">
-				<a class="navbar-brand" href="#">B/C</a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarNavDropdown">
-					<ul class="navbar-nav me-auto">
-						{# <li class="nav-item">
-							<a class="nav-link" href="#">About</a>
-						</li> #}
-						{# <li class="nav-item">
-							<a class="nav-link" href="#">Dashboard</a>
-						</li> #}
-					</ul>
-					<form class="d-flex">
-						{# <div class="me-4">
-							<button type="button" class="btn btn-primary ">Login</button>
-							<button type="button" class="btn btn-secondary">Sign-up</button>
-						</div> #}
-					</form>
-				</div>
-			</div>
-		</nav>
-	</div>
+    {% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
 
-	{% block body %}
-	{% endblock %}
+<div class="container-lg px-0">
+    <nav class="navbar navbar-expand-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">B/C</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+</div>
 
-	<div class="container-lg">
-		<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4">
-			<div class="col-md-4 d-flex align-items-center">
-				<a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-					<svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
-				</a>
-				<span class="mb-3 mb-md-0 text-muted">Brandon Charnick</span>
-			</div>
+<div class="container-md mt-5">
+    {% block body %}
+    {% endblock %}
+</div>
 
-			<ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-				<li class="ms-3">
-					<a class="text-muted" target="_blank" href="https://github.com/brandon-charnick">
-						<i width="24" height="24" class="fa-brands fa-github"></i>
-					</a>
-				</li>
-				<li class="ms-3">
-					<a class="text-muted" target="_blank" href="https://www.linkedin.com/in/brandon-charnick/">
-						<i width="24" height="24" class="fa-brands fa-linkedin-in"></i>
-					</a>
-				</li>
-			</ul>
-		</footer>
-	</div>
+<div class="container-lg">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4">
+        <div class="col-md-4 d-flex align-items-center">
+            <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                <svg class="bi" width="30" height="24">
+                    <use xlink:href="#bootstrap" />
+                </svg>
+            </a>
+            <span class="mb-3 mb-md-0 text-muted">Brandon Charnick</span>
+        </div>
+
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3">
+                <a class="text-muted" target="_blank" href="https://github.com/brandon-charnick">
+                    <i width="24" height="24" class="fa-brands fa-github"></i>
+                </a>
+            </li>
+            <li class="ms-3">
+                <a class="text-muted" target="_blank" href="https://www.linkedin.com/in/brandon-charnick/">
+                    <i width="24" height="24" class="fa-brands fa-linkedin-in"></i>
+                </a>
+            </li>
+        </ul>
+    </footer>
+</div>
+
 </html>

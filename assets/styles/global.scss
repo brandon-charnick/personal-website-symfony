@@ -6,7 +6,7 @@ $light-mode: blanchedalmond;
 $list-group-color: inherit;
 
 // the ~ allows you to reference things in node_modules
-@import "~bootstrap/scss/bootstrap";
+@import '~bootstrap/scss/bootstrap';
 
 .dropdown-toggle {
     outline: 0;
@@ -24,43 +24,45 @@ $list-group-color: inherit;
     text-decoration: overline;
 }
 
-.tm-expertise-images {
-    max-width: 1040px;
-}
-.tm-img-wrap {
-    padding: 10px;
-}
-.tm-img-wrap .expertise-container {
+.expertise-container {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: center;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    max-width: 1040px;
+    margin: auto;
+    gap: 15px;
 }
 
-.expertise-container .col-sm {
-    padding: 0;
+.expertise-box {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex: 0 1 calc(25% - 20px);
+    max-width: calc(25% - 20px);
     min-height: 50px;
+
+    @media (max-width: 768px) {
+        flex: 0 1 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+    }
 }
 
 .expertise-name {
     color: #fff;
     background: $primary;
-    background-repeat: no-repeat;
-    background-size: auto;
-    min-width: 101px;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1.1em;
+    flex: 0 0 25%;
 }
-.expertise-name p {
-    margin: auto;
-    padding: 0 15px;
-    min-width: 101px;
-}
+
 .expertise-image {
-    padding: 10px;
     color: #6c757d;
+    padding: 10px;
+    flex-grow: 1;
 }
 
 .timeline-container {
@@ -132,7 +134,6 @@ $list-group-color: inherit;
             .date {
                 font-size: 14px;
                 font-weight: 425;
-                letter-spacing: 3px;
                 top: -10px;
             }
         }
@@ -141,7 +142,7 @@ $list-group-color: inherit;
     @media only screen and (min-width: 768px) {
         .timeline {
             &:before {
-                content: "";
+                content: '';
                 position: absolute;
                 top: 0;
                 transform: translateX(-50%);
@@ -165,7 +166,7 @@ $list-group-color: inherit;
                 border-radius: 0px 20px 20px 20px;
             }
             .list-item::before {
-                content: "";
+                content: '';
                 position: absolute;
                 height: 20px;
                 width: 20px;
