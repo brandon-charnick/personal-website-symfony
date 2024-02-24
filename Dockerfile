@@ -4,8 +4,9 @@
 
 
 # https://docs.docker.com/engine/reference/builder/#understand-how-arg-and-from-interact
-ARG PHP_VERSION=8.1
+ARG PHP_VERSION=8.2
 ARG CADDY_VERSION=2
+ARG NODE_VERSION=21
 
 # Prod image
 FROM php:${PHP_VERSION}-fpm-alpine AS app_php
@@ -152,8 +153,7 @@ COPY --from=app_php /srv/app/public public/
 COPY docker/caddy/Caddyfile /etc/caddy/Caddyfile
 
 # Node image
-FROM node:18-alpine as app_node
-LABEL maintainer="brandoncharnick@gmail.com"
+FROM node:${NODE_VERSION}-alpine as app_node
 
 ENV APP_ENV=prod
 
@@ -169,6 +169,5 @@ ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 
 # Node dev image
 FROM app_node as app_node_dev
-LABEL maintainer="brandoncharnick@gmail.com"
 
 ENV APP_ENV=dev
