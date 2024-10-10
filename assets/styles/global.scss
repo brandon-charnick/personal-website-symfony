@@ -1,6 +1,7 @@
 $primary: darken(#428bca, 15%);
-$dark-mode: darkslategray;
-$light-mode: blanchedalmond;
+$dark: darkslategray;
+$light: blanchedalmond;
+$light-gray: #343a40;
 
 // https://getbootstrap.com/docs/5.2/components/list-group/
 $list-group-color: inherit;
@@ -8,20 +9,47 @@ $list-group-color: inherit;
 // the ~ allows you to reference things in node_modules
 @import '~bootstrap/scss/bootstrap';
 
-.dropdown-toggle {
-    outline: 0;
+.custom-navbar {
+    background-color: $light-gray;
+    padding: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
 }
-.custom-theme.bg-light {
-    background-color: $dark-mode !important;
-    border-radius: 3px;
-    color: gainsboro;
-    text-decoration: underline;
+
+.custom-navbar:hover {
+    background-color: $primary;
 }
-.custom-theme.bg-dark {
-    background-color: $light-mode !important;
-    box-shadow: 10px 5px 5px rgba(246, 255, 219, 0.5);
-    color: dimgray;
-    text-decoration: overline;
+
+.navbar-brand {
+    font-size: 1.75rem;
+    font-family: 'Poppins', sans-serif;
+    color: $light;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: $light-gray;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba%28$light, 0.85%29" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+    filter: drop-shadow(0px 0px 3px rgba(255, 255, 255, 0.3));
+}
+
+.navbar-toggler-icon:hover {
+    filter: drop-shadow(0px 0px 6px rgba(255, 255, 255, 0.5));
+}
+
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
 }
 
 .expertise-container {
@@ -37,11 +65,19 @@ $list-group-color: inherit;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid $light-gray;
+    border-radius: 10px;
     flex: 0 1 calc(25% - 20px);
     max-width: calc(25% - 20px);
     min-height: 50px;
+
+    &:hover {
+        transform: translateY(-5px);
+        background-color: #303030;
+        border-color: #5a5c60;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
+        transition: all 0.3s ease-in-out;
+    }
 
     @media (max-width: 768px) {
         flex: 0 1 calc(50% - 20px);
@@ -57,6 +93,8 @@ $list-group-color: inherit;
     padding: 10px 0;
     font-size: 1.1em;
     flex: 0 0 25%;
+    border-radius: 10px;
+    border: 1px solid $light-gray;
 }
 
 .expertise-image {
@@ -89,19 +127,20 @@ $list-group-color: inherit;
         .list-item {
             background-color: #242526;
             color: #e4e6eb;
-            border: 1px solid #343a40;
+            border: 1px solid $light-gray;
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 35px 20px 35px 20px;
             margin-bottom: 20px;
             transition: all 0.3s ease-in-out;
 
             &:hover {
                 transform: translateY(-5px);
+                border: 1px solid $light-gray;
                 background-color: #303030;
                 border-color: #5a5c60;
                 box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
-                border-radius: 20px 20px 20px 0;
+                border-radius: 20px 35px 20px 35px;
             }
 
             &:last-child {
@@ -163,7 +202,6 @@ $list-group-color: inherit;
             .list-item:nth-child(even) {
                 clear: left;
                 transform: translateX(30px);
-                border-radius: 0px 20px 20px 20px;
             }
             .list-item::before {
                 content: '';
@@ -172,7 +210,7 @@ $list-group-color: inherit;
                 width: 20px;
                 border-radius: 50%;
                 background-color: gray;
-                top: 0px;
+                top: 0;
             }
             .list-item:nth-child(odd)::before {
                 left: -30px;
